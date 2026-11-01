@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily UI component contracts</title>
+    <link rel="stylesheet" href="/packages/daily-ui/src/daily-ui.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui;
+        color: #20201e;
+        background: #fff;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 16px 24px;
+        background: white;
+        border-bottom: 1px solid #ddd;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 210px minmax(0, 1fr);
+        gap: 32px;
+        padding: 24px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+      button {
+        min-height: 44px;
+        padding: 8px 12px;
+      }
+      input {
+        font: inherit;
+      }
+      #heading {
+        margin-top: 24px;
+      }
+      #date-status,
+      #selected {
+        overflow-wrap: anywhere;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .copy p {
+        max-width: 70ch;
+      }
+      @media (max-width: 760px) {
+        .layout {
+          display: block;
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Daily UI · synthetic example</h1></header>
+    <div class="layout">
+      <aside>
+        <p>Published dates</p>
+        <p id="selected" hidden></p>
+        <div id="dates-scroll" role="region" aria-label="Browse dates" tabindex="0">
+          <nav id="dates" aria-label="Choose date"></nav>
+          <button id="more">Earlier dates</button>
+          <p id="date-status" role="status"></p>
+        </div>
+        <details>
+          <summary>Example schedule</summary>
+          <p>Synthetic data only.</p>
+        </details>
+      </aside>
+      <main>
+        <div id="picker">
+          <label for="author">Author</label>
+          <div class="daily-ui-field">
+            <input id="author" aria-label="Author" autocomplete="off" /><button
+              class="daily-ui-clear"
+              id="clear"
+              aria-label="All authors"
+            >
+              ×
+            </button>
+          </div>
+          <div class="daily-ui-popup" id="popup" hidden>
+            <p>Type a handle and confirm a real result.</p>
+            <div id="options" aria-label="Matching authors"></div>
+            <p id="results" role="status"></p>
+          </div>
+        </div>
+        <button id="refresh">Refresh example</button>
+        <h2 id="heading">2030-01-31</h2>
+        <p id="current-author">All authors</p>
+        <div class="copy"></div>
+      </main>
+    </div>
+    <script type="module" src="/examples/example.js"></script>
+  </body>
+</html>
