@@ -72,6 +72,8 @@ node scripts/sync.mjs --target ../reader-a --target ../reader-b --check
 
 新增内容遵循 [贡献约定](CONTRIBUTING.md)，可从 [专题模板](docs/templates/topic.md) 开始。初次整理的范围与验收记录见 [首个专题复盘](docs/retrospectives/2026-11-01-first-topic.md)。
 
+新增的 [本地文本工具与导航案例](docs/retrospectives/2026-11-09-local-text-tool.md) 记录了数据流约束、主题刷新导致的输入丢失，以及发布产物与手机模拟的验收边界；这是知识归档，没有新增组件导出。
+
 ## 许可
 
 组件、示例和文档按仓库中的 MIT 许可证提供。引用外部资料时保留其来源，不将第三方截图、私有数据或完整原文混入示例。
